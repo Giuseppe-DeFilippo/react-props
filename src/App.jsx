@@ -24,7 +24,7 @@ function App() {
       <header><h1 className="text-center">il mio blog</h1></header>
       <main>
         {posts.map(element =>
-          (<CardComponent />)
+          (<CardComponent title={element.title} image={element.image} content={element.content} tags={element.tags} />)
         )}
       </main>
       <footer className=" p-3 text-center custom-footer">
