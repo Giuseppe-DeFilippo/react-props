@@ -1,17 +1,34 @@
 
-function Card(props) {
+function Card({
+    title,
+    image,
+    content,
+    tags,
+}) {
     return (
         <>
             <div className="card-container">
                 <div className="card" style={{ width: "25rem" }}>
-                    <img src={props.image} className="card-img-top" alt="..." />
+                    <img src={image} className="card-img-top" alt="..." />
                     <div className="card-body">
-                        <h5 className="card-title">{props.title}</h5>
+                        <h5 className="card-title">{title}</h5>
                         <p className="card-text">
-                            {props.content}
+                            {content}
                         </p>
 
-                        <span>{props.tags}</span>
+                        <span>{tags.map((element) => {
+                            if (element === "html") {
+                                return (<span className="green-color" >#{element}</span>)
+                            } if (element === "css") {
+                                return (<span className="pink-color">#{element}</span>)
+                            }
+                            if (element === "js") {
+                                return (<span className="yellow-color">#{element}</span>)
+                            }
+                            if (element === "php") {
+                                return (<span className="red-color">#{element}</span>)
+                            }
+                        })}</span>
                     </div>
                 </div>
             </div>
