@@ -1,7 +1,7 @@
 
 function Card({
     title,
-    image,
+    image = "https://authenticamalficoast.it/story/il-tempo-silente-di-atrani/",
     content,
     tags,
 }) {
